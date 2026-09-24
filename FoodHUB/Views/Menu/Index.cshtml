@@ -1,0 +1,112 @@
+@model IEnumerable<FoodHUB.Models.FoodItem>
+@{
+    ViewBag.Title = "Menu";
+}
+
+<!-- Page Banner -->
+<section class="page-banner">
+    <div class="page-banner-overlay"></div>
+    <div class="container">
+        <h1>Our Menu</h1>
+        <p>Explore our carefully crafted selection of dishes made from the freshest ingredients.</p>
+        <nav class="breadcrumb-nav" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li class="separator"><i class="fas fa-chevron-right"></i></li>
+                <li class="active">Menu</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<!-- Menu Filter Tabs -->
+<section class="section menu-section">
+    <div class="container">
+        <div class="menu-filter" id="menuFilter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="starters">Starters</button>
+            <button class="filter-btn" data-filter="mains">Mains</button>
+            <button class="filter-btn" data-filter="pasta">Pasta</button>
+            <button class="filter-btn" data-filter="grill">Grill</button>
+            <button class="filter-btn" data-filter="desserts">Desserts</button>
+            <button class="filter-btn" data-filter="drinks">Drinks</button>
+        </div>
+
+        <div class="menu-grid" id="menuGrid">
+            @foreach (var item in Model)
+            {
+                <div class="menu-item" data-category="@item.Category.ToLower()">
+                    <div class="menu-item-img @item.ImageClass"></div>
+                    @if (item.IsPopular)
+                    {
+                        <div class="menu-item-badge">Popular</div>
+                    }
+                    <div class="menu-item-body">
+                        <div class="menu-item-header">
+                            <h3>@item.Name</h3>
+                            <span class="menu-price">$@item.Price.ToString("0.00")</span>
+                        </div>
+                        <p class="menu-item-desc">@item.Description</p>
+                        <div class="menu-item-tags">
+                            <span class="tag">@item.Category</span>
+                            @if (item.IsVegetarian)
+                            {
+                                <span class="tag tag-veg"><i class="fas fa-leaf"></i> Vegetarian</span>
+                            }
+                            @if (item.IsSpicy)
+                            {
+                                <span class="tag tag-spicy"><i class="fas fa-pepper-hot"></i> Spicy</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Dietary Info -->
+<section class="dietary-section">
+    <div class="container">
+        <h3>Dietary Information</h3>
+        <div class="dietary-grid">
+            <div class="dietary-item">
+                <i class="fas fa-leaf" style="color:#4caf50"></i>
+                <span>Vegetarian options available</span>
+            </div>
+            <div class="dietary-item">
+                <i class="fas fa-seedling" style="color:#8bc34a"></i>
+                <span>Vegan dishes on request</span>
+            </div>
+            <div class="dietary-item">
+                <i class="fas fa-wheat-awn" style="color:#ff9800"></i>
+                <span>Gluten-free alternatives available</span>
+            </div>
+            <div class="dietary-item">
+                <i class="fas fa-triangle-exclamation" style="color:#f44336"></i>
+                <span>Allergen info available — ask your server</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section scripts {
+<script>
+    $(function () {
+        var $btns = $('.filter-btn');
+        var $items = $('.menu-item');
+
+        $btns.on('click', function () {
+            $btns.removeClass('active');
+            $(this).addClass('active');
+            var filter = $(this).data('filter');
+            if (filter === 'all') {
+                $items.fadeIn(300);
+            } else {
+                $items.hide();
+                $items.filter('[data-category="' + filter + '"]').fadeIn(300);
+            }
+        });
+    });
+</script>
+}

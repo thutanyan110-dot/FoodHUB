@@ -1,0 +1,176 @@
+@{
+    ViewBag.Title = "Home";
+}
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <p class="hero-tagline">Welcome to Food HUB</p>
+        <h1>Where Every Meal Tells<br />a <span>Story</span></h1>
+        <p class="hero-sub">Fresh ingredients. Bold flavours. Unforgettable dining experiences crafted just for you.</p>
+        <div class="hero-buttons">
+            <a href="@Url.Action("Index", "Menu")" class="btn btn-primary">Explore Menu</a>
+            <a href="@Url.Action("Index", "Reservation")" class="btn btn-outline">Reserve a Table</a>
+        </div>
+    </div>
+    <div class="hero-scroll-hint">
+        <span>Scroll Down</span>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+</section>
+
+<!-- Features Strip -->
+<section class="features-strip">
+    <div class="container features-grid">
+        <div class="feature-card">
+            <i class="fas fa-leaf"></i>
+            <h3>Fresh &amp; Local</h3>
+            <p>Every ingredient is sourced fresh from local farms and trusted suppliers.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-award"></i>
+            <h3>Award-Winning</h3>
+            <p>Recognised as the city's top dining destination for five years running.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-heart"></i>
+            <h3>Made with Love</h3>
+            <p>Our chefs pour passion into every dish that leaves our kitchen.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-truck"></i>
+            <h3>Fast Delivery</h3>
+            <p>Order online and enjoy Food HUB at home — delivered in 30 minutes.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Dishes -->
+<section class="section featured-dishes">
+    <div class="container">
+        <div class="section-header">
+            <p class="section-label">Our Specialties</p>
+            <h2>Fan Favourite Dishes</h2>
+            <p class="section-sub">Handpicked by our chefs and loved by our guests — these are the dishes people come back for.</p>
+        </div>
+        <div class="dishes-grid">
+            <div class="dish-card">
+                <div class="dish-img dish-img-1"></div>
+                <div class="dish-info">
+                    <span class="dish-category">Pasta</span>
+                    <h3>Creamy Truffle Linguine</h3>
+                    <p>Hand-rolled linguine tossed in a rich black truffle cream sauce with parmesan shavings.</p>
+                    <div class="dish-footer">
+                        <span class="dish-price">$24.99</span>
+                        <a href="@Url.Action("Index", "Menu")" class="btn btn-sm">View Menu</a>
+                    </div>
+                </div>
+            </div>
+            <div class="dish-card featured">
+                <div class="dish-badge">Chef's Pick</div>
+                <div class="dish-img dish-img-2"></div>
+                <div class="dish-info">
+                    <span class="dish-category">Grill</span>
+                    <h3>Prime Wagyu Ribeye</h3>
+                    <p>250g A5 Wagyu ribeye, grilled to perfection, served with roasted vegetables and red wine jus.</p>
+                    <div class="dish-footer">
+                        <span class="dish-price">$54.99</span>
+                        <a href="@Url.Action("Index", "Menu")" class="btn btn-sm">View Menu</a>
+                    </div>
+                </div>
+            </div>
+            <div class="dish-card">
+                <div class="dish-img dish-img-3"></div>
+                <div class="dish-info">
+                    <span class="dish-category">Dessert</span>
+                    <h3>Dark Chocolate Fondant</h3>
+                    <p>Warm molten chocolate fondant with a salted caramel core, served with vanilla bean ice cream.</p>
+                    <div class="dish-footer">
+                        <span class="dish-price">$12.99</span>
+                        <a href="@Url.Action("Index", "Menu")" class="btn btn-sm">View Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-cta">
+            <a href="@Url.Action("Index", "Menu")" class="btn btn-primary">View Full Menu</a>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Banner -->
+<section class="stats-banner">
+    <div class="container stats-grid">
+        <div class="stat">
+            <h3>12+</h3>
+            <p>Years of Excellence</p>
+        </div>
+        <div class="stat">
+            <h3>85+</h3>
+            <p>Dishes on the Menu</p>
+        </div>
+        <div class="stat">
+            <h3>50k+</h3>
+            <p>Happy Customers</p>
+        </div>
+        <div class="stat">
+            <h3>18</h3>
+            <p>Expert Chefs</p>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section testimonials">
+    <div class="container">
+        <div class="section-header">
+            <p class="section-label">What People Say</p>
+            <h2>Guest Reviews</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>"Absolutely incredible dining experience. The Wagyu ribeye was the best steak I have ever had. Will definitely be back!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JM</div>
+                    <div>
+                        <strong>James Mitchell</strong>
+                        <span>Food Critic</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>"Food HUB has become our go-to spot for family celebrations. The staff are warm, the food is exceptional, and the atmosphere is perfect."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SR</div>
+                    <div>
+                        <strong>Sarah Reynolds</strong>
+                        <span>Regular Guest</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p>"The truffle linguine is simply divine. I have tried pasta all over the world and this holds up to the very best."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">TC</div>
+                    <div>
+                        <strong>Thomas Chen</strong>
+                        <span>Travel Blogger</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner">
+    <div class="container">
+        <h2>Ready for an Unforgettable Dining Experience?</h2>
+        <p>Book your table today and let us take care of the rest.</p>
+        <a href="@Url.Action("Index", "Reservation")" class="btn btn-primary btn-lg">Reserve Your Table</a>
+    </div>
+</section>

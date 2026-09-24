@@ -1,0 +1,65 @@
+@model FoodHUB.Models.Reservation
+@{
+    ViewBag.Title = "Reservation Confirmed";
+}
+
+<section class="section thanks-section">
+    <div class="container thanks-container">
+        <div class="thanks-icon">
+            <i class="fas fa-calendar-check"></i>
+        </div>
+        <h1>You're All Set!</h1>
+        <p>Your reservation has been confirmed. We look forward to welcoming you at Food HUB.</p>
+
+        <div class="confirm-summary">
+            <h3>Booking Summary</h3>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <i class="fas fa-user"></i>
+                    <div>
+                        <span class="summary-label">Name</span>
+                        <span class="summary-value">@Model.FirstName @Model.LastName</span>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <i class="fas fa-calendar"></i>
+                    <div>
+                        <span class="summary-label">Date</span>
+                        <span class="summary-value">@Model.Date.ToString("dddd, MMMM d, yyyy")</span>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <span class="summary-label">Time</span>
+                        <span class="summary-value">@Model.Time</span>
+                    </div>
+                </div>
+                <div class="summary-item">
+                    <i class="fas fa-users"></i>
+                    <div>
+                        <span class="summary-label">Guests</span>
+                        <span class="summary-value">@Model.Guests @(Model.Guests == 1 ? "Guest" : "Guests")</span>
+                    </div>
+                </div>
+            </div>
+            @if (!string.IsNullOrWhiteSpace(Model.SpecialRequests))
+            {
+                <div class="summary-notes">
+                    <i class="fas fa-note-sticky"></i>
+                    <div>
+                        <span class="summary-label">Special Requests</span>
+                        <span class="summary-value">@Model.SpecialRequests</span>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <p class="confirm-note">A confirmation has been sent to <strong>@Model.Email</strong>. If you need to make changes, please call us at <a href="tel:+15551234567">+1 (555) 123-4567</a>.</p>
+
+        <div class="thanks-actions">
+            <a href="@Url.Action("Index", "Home")" class="btn btn-primary">Back to Home</a>
+            <a href="@Url.Action("Index", "Menu")" class="btn btn-outline">View Menu</a>
+        </div>
+    </div>
+</section>
