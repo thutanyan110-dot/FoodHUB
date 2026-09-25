@@ -80,3 +80,5 @@ The app will launch in your browser at `localhost` via IIS Express.
 - `/Reservation` — Book a table
 - `/About` — About us
 - `/Contact` — Get in touch
+
+This project is a shared project with friends.
